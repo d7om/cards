@@ -1,0 +1,21 @@
+<h1>Choose a Picture</h1>
+<div id="card_image_container">
+
+<%= form_with(model: @card_order, url: card_generator_path, method: 'post', multipart: true) do |form| %>
+  <!-- Your form fields go here -->
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <div class="image-option" data-value="app\assets\images\switch 24port.png">
+    <%= image_tag "switch 24port.png" %>
+  </div>
+  <div class="image-option" data-value="">
+   <%= image_tag "switch 24port.png" %>
+  </div>
+  <input type="hidden" id="selectedImage" name="card_order[template_path]" value="">
+  <%= text_field_tag (:user_name) %>
+  <%= form.submit 'Generate Card', class: 'btn btn-primary' %>
+<% end %>
+
+</div>
+
+
+

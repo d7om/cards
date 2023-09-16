@@ -5,12 +5,26 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
+  <script>
+    $(document).ready(function () {
+      // Handle image selection
+      $('.image-option').on('click', function () {
+        // Remove active class from all image options
+        $('.image-option').removeClass('active');
+        // Add active class to the clicked image option
+        $(this).addClass('active');
+        // Set the selected image path in the hidden input field
+        var imagePath = $(this).data('value');
+        $('#selectedImage').val(imagePath);
+      });
+    });
+  </script>
     <%= yield %>
   </body>
 </html>

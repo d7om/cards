@@ -1,0 +1,6 @@
+<!-- app/views/card_generator/show.html.erb -->
+<h1>Congratulations Card</h1>
+
+<%= image_tag show_generated_card_path(file_path: @file_path), alt: 'Congratulations Card' %>
+
+<%= link_to 'Download Card', show_generated_card_path(file_path: @file_path), class: 'btn btn-primary', download: 'congratulations_card.png' %>
